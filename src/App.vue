@@ -1,22 +1,32 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <appDisplay></appDisplay>
+    <Keypad></Keypad>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+
+import Display from './components/Display';
+import Keypad from './components/Keypad';
 
 export default {
-  name: 'App',
+  data() {
+    return {
+      name: 'App',
+    };
+  },
   components: {
-    HelloWorld
-  }
-}
+    appDisplay: Display,
+    Keypad,
+  },
+};
 </script>
 
 <style>
+
+@import './assets/pure-min.css';
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,4 +35,13 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.button-xlarge {
+            font-size: 125%;
+            padding: 40px;
+            margin-top: 10px;
+        }
+.button-warning {
+         background: rgb(223, 117, 20); /* this is an orange */
+       }
 </style>
